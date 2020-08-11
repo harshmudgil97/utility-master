@@ -1,0 +1,47 @@
+ <%-include("header.ejs");-%>
+
+ <!-- Top Card -->
+
+ <section id="top-card-section">
+   <div class="container-fluid mainView common" style="background-image: url(<%=setWeather.backImg%>); color: <%=setWeather.getColor%>;   background-size: cover; background-repeat: none;">
+     <div class="row">
+
+       <div class="col-lg-6 indent-left ">
+         <form action="/setting" method="post">
+           <button class="btn btn-link btn-common" style="color: <%=setWeather.getColor%>; " type="settingsAdder" name="buttonListAdder" value="setting"><i class="fas fa-cog fa-lg"></i></button>
+         </form>
+         <img src=<%=setWeather.imageURI%> alt="weather-icon">
+         <h5 class="weather-padd"><%=setWeather.city%>, <%=setWeather.temp%></h5>
+         <h5 class="hide">Feels Like <%=setWeather.feels_like%></h5>
+         <h5 class="hide"><%=setWeather.description%></h5>
+       </div>
+
+       <div class="col-lg-6">
+         <h1 class="date"><%=date%></h1>
+       </div>
+
+     </div>
+   </div>
+ </section>
+
+
+ <!-- Middle-card-section -->
+
+
+ <div class="container-fluid middle-card common" style="background-image: url(<%=setWeather.backImg%>);">
+
+   <form action="/" method="post">
+     <input style="color: <%=setWeather.getColor%>; " type="listAdder" name="newListItem" autocomplete="off" placeholder="Enter List Name ">
+     <button type="listAdder" name="buttonListAdder" value="trustedFlag">Add List</button>
+   </form>
+
+ </div>
+
+ <!-- Lists section -->
+
+ <div class="container-fluid common bottom-card go-down">
+   <%-include("listShack.ejs");-%>
+ </div>
+
+
+ <%-include("footer.ejs");-%>

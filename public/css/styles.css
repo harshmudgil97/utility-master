@@ -1,0 +1,350 @@
+body {
+  font-family: 'DM Sans', sans-serif;
+  /* font-family: 'Fredoka One', cursive; */
+  text-align: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.padding{
+  padding: 0.5rem;
+}
+
+/* Index Section */
+
+.date {
+  font-size: 3vw;
+  display: inline-block;
+}
+
+.common{
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.6);
+  background-size: cover;
+  padding: 1vw;
+  width: 40%;
+  border-radius: 0.7vw;
+}
+
+.mainView {
+  margin: auto;
+  margin-top: 2rem;
+  color: #fff;
+}
+
+.go-down{
+  margin-top: 2.5rem;
+}
+
+.middle-card {
+  position: relative;
+  top: 2rem;
+}
+
+.bottom-card{
+  position: relative;
+  top: 2rem;
+  margin-bottom: 2rem;
+}
+
+button[type=listAdder] {
+  border-color: transparent;
+  background-color: #A683E3;
+  color: #fff;
+  border-radius: 0.7vw;
+  padding: 0.3rem 0.6rem;
+  font-size: 18px;
+}
+
+input[type=listAdder] {
+  height: 100%;
+  background: transparent;
+  border: none;
+  width: 80%;
+  display: inline-block;
+  position: relative;
+  right: 20px;
+  padding-left: 1rem;
+  font-size: 20px;
+}
+
+input[type=listAdder]::placeholder{
+  color: #fff;
+  opacity: 70%;
+}
+
+.imageToDo{
+  width: 45%;
+  height: 45%;
+  padding: 5px;
+}
+
+input[type=listAdder]:focus {
+  outline: none;
+  background: transparent;
+  border: none;
+}
+
+/* Settings section */
+
+.btn-common {
+  color: #fff;
+  text-transform: capitalize;
+  font-weight:bolder;
+  font-size: 1.2rem;
+}
+
+
+button[type=settingsAdder],button[type = listImage]:hover{
+  color: #000;
+  text-decoration: none;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+.indent-left {
+  text-align: left;
+  font-family: 'Fredoka One', cursive;
+}
+
+.setting-title{
+  text-align: left;
+  display: inline-block;
+}
+
+.common-setting{
+  position: relative;
+  color: #fff;
+  right: 15%;
+  margin-top: 2.5rem;
+}
+
+.big-heading{
+  font-size: 3.5rem;
+}
+
+.label-text{
+  font-family: sans-serif;
+  font-size: 1.4rem;
+  font-style: 600;
+}
+
+.subsList{
+  border-radius: 0.4vw;
+  padding: 5px;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+hr{
+  padding: 0.3rem;
+}
+
+.setting-btn{
+  margin-top: 4rem;
+  margin-left: 0.8rem;
+}
+
+.mid-heading{
+  display: inline-block;
+  position: relative;
+  top: 1.8rem;
+  color: #fff;
+  right:15%;
+}
+
+.push{
+   height: 25rem;
+}
+
+footer{
+width: 100%;
+text-align: center;
+}
+
+
+/* PreDef section */
+
+.box {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.item {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #F1F1F1;
+}
+.item:last-child {
+  border-bottom: 0;
+}
+
+input:checked+p {
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
+
+input[type="checkbox"] {
+  margin: 20px;
+}
+
+p{
+  margin: 0;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #00204a;
+}
+
+button[type = preDefBtn]{
+  min-height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #A683E3;
+  color: #fff;
+  font-size: 30px;
+  border-width: 0;
+}
+
+.preDef-Input{
+  border-radius: 0.4vw;
+  padding: 5px;
+  outline: none;
+  border: none;
+  margin-right: 1rem;
+}
+
+.small-screen-pad{
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.6);
+  background-size: cover;
+  padding: 1vw;
+  width: 40%;
+  border-radius: 0.7vw;
+}
+
+
+/* Responsive section */
+@media (max-width: 1275px){
+  input[type="listAdder"]{
+    text-align: center;
+    left:0;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 1200px){
+  .imageToDo{
+    width: 70%;
+    height: 70%;
+  }
+}
+
+@media (max-width: 991px){
+  input[type="listAdder"]{
+    text-align: center;
+    width: 100%;
+    left:0;
+    padding-bottom: 20px;
+  }
+  .sm-pad{
+    padding-left: 30px;
+    padding-right: 0
+  }
+  p{
+    font-size: 20px;
+  }
+
+  .date{
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+
+  .common{
+    width: 60%;
+  }
+
+  .imageToDo{
+    width: 20%;
+    height: 20%;
+  }
+
+  .indent-left{
+    text-align: center;
+  }
+}
+
+@media (max-width: 800px){
+  .small-screen-pad{
+    width: 380px;
+  }
+}
+
+
+@media (max-width: 609px){
+
+  .small-screen-pad{
+    width: 335px;
+  }
+
+  .weather-padd{
+    padding-bottom: 5px;
+  }
+  .box{
+    max-width: 335px;
+  }
+  p{
+    font-size: 15px;
+  }
+
+  .display-4{
+    font-size: 2.7rem;
+  }
+
+  .sm-pad{
+    padding-left: 30px;
+    padding-right: 0
+  }
+
+  .mid-heading{
+    text-align: center;
+    left:0;
+  }
+
+  .setting-title{
+    text-align: center;
+    display: inline-block;
+    left:0;
+  }
+
+  .hide{
+    display: none;
+  }
+
+  .common{
+    width: 335px;
+  }
+  .middle-card{
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .imageToDo{
+    width: 25%;
+    height: 25%;
+  }
+
+  button[type=listAdder] {
+    border-radius: 0.7vw;
+    padding: 0.2rem 0.4rem;
+    font-size: 15px;
+  }
+
+
+}

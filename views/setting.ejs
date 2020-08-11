@@ -1,0 +1,223 @@
+ <%-include("header.ejs");-%>
+
+ <!-- Headding Section -->
+
+ <section id="top-heading">
+
+   <div class="container-fluid">
+     <div class="setting-title common-setting">
+       <form action="/setting" method="post" enctype="application/x-www-form-urlencoded">
+         <button class="btn btn-link btn-common" style="color: <%=setWeather.getColor%>; " type="submit" name="settingsBtn" value="back"><i class="fas fa-arrow-circle-left fa-lg"></i></button>
+       </form>
+
+       <h1 style="color: <%=setWeather.getColor%>;" class="big-heading">Settings</h1>
+     </div>
+   </div>
+
+ </section>
+
+
+ <!-- Weather-settings -->
+
+ <section id="weather-section">
+
+   <h2 class="mid-heading" style="color: <%=setWeather.getColor%>;">Weather</h2>
+
+   <div class="container-fluid mainView small-screen-pad">
+
+     <form action="/setting" method="post" name="weatherSelector">
+
+       <div class="row padding container-fluid">
+         <div class="col-lg-6 sm-pad">
+           <label class="label-text" style="color: <%=setWeather.getColor%>;">Country</label>
+         </div>
+         <div class="col-lg-6 sm-pad">
+           <select onchange="submitCountry()" name="country" class="countries subsList" id="countryId">
+             <%  if(labelCountry!==undefined){ %>
+             <option label="<%=labelCountry%>">
+               <%    } else { %>
+             <option label="Choose Country">
+               <%    } %>
+
+               <%   for(var i in allCountryData){ %>
+
+               <%     for(var j in allCountryData[i]){ %>
+
+               <%     if(j == "name"){  %>
+             <option value="<%=allCountryData[i]['shortName']%>"><%=allCountryData[i][j]%></option>
+
+             <%   } %>
+
+             <%   } %>
+             <% } %>
+
+
+           </select>
+         </div>
+       </div>
+
+       <hr>
+
+       <div class="row padding container-fluid">
+         <div class="col-lg-6 sm-pad">
+           <label class="label-text" style="color: <%=setWeather.getColor%>; ">State</label>
+         </div>
+         <div class="col-lg-6 sm-pad">
+           <select onchange="submitState()" name="state" class="states subsList" id="stateId">
+
+             <%  if(labelState!==undefined){ %>
+             <option label="<%=labelState%>">
+               <%    } else { %>
+             <option label="Choose State">
+               <%    } %>
+
+               <%   for(var i = 0; i<=allStateData.length;i++){ %>
+             <option value="<%=allStateData[i]%>"><%=allStateData[i]%></option>
+             <%  }  %>
+
+           </select>
+         </div>
+       </div>
+
+       <hr>
+
+       <div class="row padding container-fluid">
+         <div class="col-lg-6 sm-pad">
+           <label class="label-text" style="color: <%=setWeather.getColor%>; ">City</label>
+         </div>
+         <div class="col-lg-6 sm-pad">
+
+           <select name="newCity" class="cities subsList" id="cityId">
+             <%  if(labelCity!==undefined){ %>
+             <option label="<%=labelCity%>">
+               <%    } else { %>
+             <option label="Choose City">
+               <%    } %>
+
+               <%     if (allCityData != null && allCityData.length > 0) { %>
+
+               <%   for(var i = 0; i<=allCityData.length;i++){ %>
+             <option value="<%=allCityData[i]%>"><%=allCityData[i]%></option>
+             <%  }  %>
+
+             <%  }  %>
+
+
+           </select>
+         </div>
+       </div>
+
+       <hr>
+
+       <div class="row padding container-fluid">
+         <div class="col-lg-6 sm-pad">
+           <label class="label-text" style="color: <%=setWeather.getColor%>; ">Units</label>
+         </div>
+         <div class="col-lg-6 sm-pad">
+           <select class="subsList" name="unit">
+             <option label="Choose Unit">
+             <option value="metric">Metric</option>
+             <option value="imperial">Fahrenheit</option>
+           </select>
+         </div>
+       </div>
+
+       <div class="row padding container-fluid">
+
+         <div class="col-lg-12">
+           <button type="submit" class="btn btn-outline-dark btn-lg btn-block setting-btn" name="settingsBtn" value="weatherSaver" onclick="cityAlertChecker()">save</button>
+         </div>
+
+       </div>
+     </form>
+
+   </div>
+ </section>
+
+
+ <!-- Delete List Section -->
+
+
+ <section id="delete-list-Section">
+   <h2 class="mid-heading" style="color: <%=setWeather.getColor%>;">Delete</h2>
+   <div class="container-fluid container-fluid small-screen-pad bottom-card">
+
+     <%-include("listShack.ejs");-%>
+
+   </div>
+
+ </section>
+
+ <!-- Subscribe section -->
+
+
+ <section id="subs-section">
+
+   <h2 class="mid-heading" style="color: <%=setWeather.getColor%>;">Updates</h2>
+
+   <div class="container-fluid mainView small-screen-pad">
+
+     <form action="/setting" method="post">
+
+       <div class="row padding container-fluid">
+         <div class="col-lg-6 sm-pad">
+           <label class="label-text" style="color: <%=setWeather.getColor%>;">Email</label>
+         </div>
+         <div class="col-lg-6 sm-pad">
+           <input class="subsList  style=" color: <%=setWeather.getColor%>;" type="text" name="eMail" value="" placeholder="Email" autocomplete="off">
+         </div>
+       </div>
+
+       <hr>
+
+       <div class="row padding container-fluid">
+         <div class="col-lg-6 sm-pad">
+           <label class="label-text" style="color: <%=setWeather.getColor%>;">First Name</label>
+         </div>
+         <div class="col-lg-6 sm-pad">
+           <input class="subsList" type="text" name="fName" value="" placeholder="First Name" autocomplete="off">
+         </div>
+       </div>
+
+       <hr>
+
+       <div class="row padding container-fluid">
+         <div class="col-lg-6 sm-pad">
+           <label class="label-text" style="color: <%=setWeather.getColor%>;">Last Name</label>
+         </div>
+         <div class="col-lg-6 sm-pad">
+           <input class="subsList" type="text" name="lName" value="" placeholder="Last Name" autocomplete="off">
+         </div>
+       </div>
+
+       <div class="row padding container-fluid">
+
+         <div class="col-lg-12">
+           <button type="submit" class="btn btn-outline-dark btn-lg btn-block setting-btn" name="settingsBtn" value="subscribed">subscribe</button>
+         </div>
+
+       </div>
+     </form>
+
+   </div>
+ </section>
+
+ <script type="text/javascript">
+   function submitCountry() {
+
+     document.weatherSelector.submit();
+   }
+
+   function submitState() {
+     document.weatherSelector.submit();
+   }
+
+
+   function cityAlertChecker() {
+     if (!$('#cityId').val()) {
+       alert("City cannot be left blank\nDefault set to: Delhi, IN");
+     }
+   }
+ </script>
+
+ <%-include("footer.ejs");-%>

@@ -1,0 +1,10 @@
+<div class="row">
+  <%  for(var i = 0; i<listItem.length;i++){   %>
+  <div class="col-lg-4 padding">
+    <form action="<%=findRoute%>" method="post">
+      <button class="btn btn-link btn-common" style="color: <%=setWeather.getColor%>;" type="listImage" name="<%=buttonType%>" value="<%=listItem[i] %>"> <img class="imageToDo img-responsive" src="images/tick.png"
+          alt="note-check"><br /><%=listItem[i]%></button>
+    </form>
+  </div>
+  <%  }   %>
+</div>

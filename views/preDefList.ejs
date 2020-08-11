@@ -1,0 +1,42 @@
+ <%-include("header.ejs");-%>
+
+ <div class="container-fuid">
+
+   <div class="setting-title common-setting"">
+     <form action=" /<%=listItem%>" method="post">
+     <button style="color: <%=setWeather.getColor%>;" class="btn btn-link btn-common" style="color: <%=setWeather.getColor%>; " type="submit" name="multiPurpBtn" value="prefback"><i class="fas fa-arrow-circle-left fa-lg"></i></button>
+     </form>
+     <h1 style="color: <%=setWeather.getColor%>;" class="big-heading"><%=listItem%></h1>
+   </div>
+
+ </div>
+
+
+ <div class="container-fluid box">
+   <%  for(var i = 0; i< listDef.length; i++){ %>
+
+
+     <form action="/mod/delete" method="post">
+       <div class="item">
+       <input type="checkbox" name="checker" value="<%=listDef[i]%>" onChange="this.form.submit()">
+       <p><%=listDef[i]%></p>
+       <input type="hidden" name="checkList" value="<%=listItem%>">
+       </div>
+     </form>
+
+
+   <%  } %>
+ </div>
+
+
+ <div class="container-fluid">
+   <form action="/<%=listItem%>" method="post">
+     <input class="preDef-Input" type="text" name="preDefListItem" autocomplete="off" placeholder="Enter New Item">
+     <button type="preDefBtn" name="multiPurpBtn" value="<%=listItem%>">+</button>
+   </form>
+ </div>
+
+
+
+
+ <%-include("footer.ejs");-%>

@@ -1,0 +1,17 @@
+ <%-include("header.ejs");-%>
+
+ <body>
+
+   <div class="jumbotron jumbotron-fluid" style="background-image: url(<%=setWeather.backImg%>); color: <%=setWeather.getColor%>; background-size: cover; text-align:left">
+     <div class="container">
+       <h1 class="display-4" style="color:<%=setWeather.getColor%>;"><%=mainHead%></h1>
+       <p class="lead" style="color:<%=setWeather.getColor%>;">We are glad you are with us. We make your life simple. (Usually, ¯\_(ツ)_/¯)</p>
+       <hr class="my-4">
+       <form class="/setting" action="index.html" method="post">
+         <button class="btn btn-link btn-common" style="color: <%=setWeather.getColor%>;" type="submit" name="multiPurpBtn" value="go-back"><i class="fas fa-arrow-circle-left fa-2x"></i></button>
+       </form>
+     </div>
+   </div>
+
+
+   <%-include("footer.ejs");-%>
